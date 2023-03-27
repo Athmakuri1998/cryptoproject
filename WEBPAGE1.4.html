@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Upcoming Election</title>
+    <style>
+      body {
+        background-color: grey;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .button {
+        padding: 15px 25px;
+        background-color: blue;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        margin-bottom: 20px;
+      }
+      h1 {
+        color: white;
+        text-align: center;
+        font-size: 48px;
+        margin-bottom: 10px;
+      }
+      h2 {
+        color: white;
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      label {
+        color: white;
+        margin-right: 10px;
+        font-size: 24px;
+      }
+      input[type="radio"] {
+        margin-right: 10px;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Upcoming Election</h1>
+      <h2>Choose Your Party</h2>
+      <form>
+        <label for="democratic" style="font-size: 36px;">Democratic Party</label>
+        <input type="radio" name="party" id="democratic" value="Democratic" style="font-size: 36px;" />
+        <label for="republican" style="font-size: 36px;">Republican Party (GOP)</label>
+        <input type="radio" name="party" id="republican" value="Republican" style="font-size: 36px;" />
+      </form>
+      <button class="button" onclick="vote()">Vote</button>
+      <script>
+        function vote() {
+          var selectedParty = document.querySelector('input[name="party"]:checked');
+          if (selectedParty) {
+            alert("You voted for the " + selectedParty.value + " Party.");
+          } else {
+            alert("Please select a party to vote.");
+          }
+        }
+      </script>
+    </div>
+  </body>
+</html>
